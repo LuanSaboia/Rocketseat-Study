@@ -11,6 +11,7 @@ export function Home() {
   const [user, setUser] = useState([{name: '', avatar: ''}]);
 
   function handleAddStudent(){
+    if(studentName){
     const newStudent = {
       name: studentName,
       time: new Date().toLocaleTimeString("pt-br", {
@@ -19,10 +20,10 @@ export function Home() {
         second: '2-digit',
       })
     }
-
-    setStudent(prevState => [...prevState, newStudent]);
+    console.log(newStudent)
+    setStudent(prevState => [...prevState, newStudent]);}
   }
-
+  
   useEffect(() => {
     //corpo do useEffect, renderiza sempre que iniciar codigo
     //em [] pode ser passado instâncias de quando será carregado dnv
@@ -66,8 +67,9 @@ export function Home() {
         type="text"
         placeholder="Digite o nome..."
         onChange={e => setStudentName(e.target.value)}
+        required
       />
-      <button type="button" onClick={handleAddStudent}>
+      <button type="button" className="btn-container"onClick={handleAddStudent}>
         Salvar
       </button>
 
@@ -81,6 +83,7 @@ export function Home() {
           />
         )
       }
+      
     </div>
   )
 }

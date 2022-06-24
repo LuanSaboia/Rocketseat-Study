@@ -17,3 +17,26 @@
 .card strong {
   font-size: 18px;
 }
+
+.card .dados{
+  display: flex;
+  flex-direction: column;
+}
+
+.card .opcoes{
+  display: flex;
+  margin-bottom: 100px;
+}
+.card .botoes {
+  width: 20px;
+  height: 20px;
+
+  margin-right: 10px;
+
+  border: none;
+  border-radius: 30px;
+}
+
+.card #deletar {
+  background: #f44336;
+}
